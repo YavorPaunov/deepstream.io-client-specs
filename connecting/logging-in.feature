@@ -6,10 +6,13 @@ Feature: Logging In
 	(A|REQ|<JSON authData>) must always be the first message send by
 	the client.
 
-Scenario: The client logs in with valid authentication credentials
+Background: The server is ready
 
 	Given the test server is ready
-		And the client is initialised
+
+Scenario: The client logs in with valid authentication credentials
+
+    Given the client is initialised
 		And the server sends the message C|A+
 	When the client logs in with username "XXX" and password "YYY"
 	Then the last message the server recieved is A|REQ|{"username":"XXX","password":"YYY"}+

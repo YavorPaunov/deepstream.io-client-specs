@@ -7,8 +7,8 @@ Scenario: Redirecting the client to another deepstream gets rejected
 
 # The test server is idle and awaits connections
 	Given the test server is ready
-	Given the second test server is ready
-		And the second server has 0 active connections
+        And the second test server is ready
+    Then the second server has 0 active connections
 
 # The client is instantiated and creates a connection
 	Given the client is initialised

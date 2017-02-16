@@ -41,4 +41,4 @@ Scenario: Event Listen
 	# Following server updates will throw an error
 	Given the server sends the message E|SP|eventPrefix/.*|eventPrefix/foundAMatch+
 	#TODO: This error message isn't great
-	And the client throws a "UNSOLICITED_MESSAGE" error with message "eventPrefix/.*"
+	Then the client throws a "UNSOLICITED_MESSAGE" error with message "eventPrefix/.*"

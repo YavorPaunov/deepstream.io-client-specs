@@ -22,8 +22,8 @@ Feature: Record Conflicts
 	Scenario: Record conflict on set
 
 	  # The client tries to set an out of date value
-	  Given the client sets the record "mergeRecord" "key" to "value3"
-	  When the server sends the message R|E|VERSION_EXISTS|mergeRecord|101|{"key":"value2"}+
+	  When the client sets the record "mergeRecord" "key" to "value3"
+	  And  the server sends the message R|E|VERSION_EXISTS|mergeRecord|101|{"key":"value2"}+
 	  Then the last message the server recieved is R|U|mergeRecord|102|{"key":"value2"}+
 
 	Scenario: Record conflict from update
